@@ -1,0 +1,66 @@
+
+buildscript {
+
+    ext.kotlin_version = '1.2.51'
+
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+        }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlin_version"
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.5.RELEASE"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE"
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.2.51'
+}
+
+apply plugin: 'kotlin'
+apply plugin: "kotlin-spring"
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group 'com.okitaasuka'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-reflect', version: '1.2.31'
+
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
+
+    compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.3.2'
+
+    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'
+
+    compile group: 'com.alibaba', name: 'druid', version: '1.1.9'
+
+    compile group: 'org.jdom', name: 'jdom', version: '2.0.2'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}

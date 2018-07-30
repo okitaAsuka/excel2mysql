@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e9147048-6529-4db8-bd3b-cfea2d90d63c" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.gradle/" />
+    <ignored path="$PROJECT_DIR$/build/" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="myGradleHomes">
+      <map>
+        <entry key="$PROJECT_DIR$" value="F:\develop\gradle-4.5-all\gradle-4.5" />
+      </map>
+    </option>
+    <option name="myGradleVersions">
+      <map>
+        <entry key="$PROJECT_DIR$" value="4.5" />
+      </map>
+    </option>
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="excel2mysql" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="excel2mysql" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="availableTasks">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the components produced by root project 'excel2mysql'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="components" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildDependents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="inspectClassesForKotlinIC" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the sub-projects of root project 'excel2mysql'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="classes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the dependent components of components in root project 'excel2mysql'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependentComponents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'excel2mysql'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildEnvironment" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Gradle wrapper files." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="wrapper" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles test classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="testClasses" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Javadoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="javadoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles an executable jar archive containing the main classes and their dependencies." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="bootJar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles a jar archive containing the main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="jar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the configuration model of root project 'excel2mysql'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="model" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes main resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the tasks runnable from root project 'excel2mysql'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Initializes a new Gradle build." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="init" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Supported annotations: ; Presets: spring; Compiler plugin classpath: F:\GRADLE_LIB\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-allopen\1.2.51\7c8287028a8fcab041570b971cd46c1eaa3aa04b\kotlin-allopen-1.2.51.jar" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="allOpenDataStorageTask" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs the unit tests." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="test" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the dependency management declared in root project 'excel2mysql'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencyManagement" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs this project as a Spring Boot application." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="bootRun" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles main Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles the source set 'test'.kotlin." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileTestKotlin" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the insight into a specific dependency in root project 'excel2mysql'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencyInsight" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all checks." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="check" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles the outputs of this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="assemble" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Deletes the build directory." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="clean" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles test Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileTestJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all dependencies declared in root project 'excel2mysql'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes test resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays a help message." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="help" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles the source set 'main'.kotlin." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileKotlin" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="build" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects it depends on." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the properties of root project 'excel2mysql'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="properties" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="4597667614804" />
+        <entry key="$PROJECT_DIR$/.gradle" value="0" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="997392068" />
+        <entry key="$PROJECT_DIR$/settings.gradle" value="3648496490" />
+      </map>
+    </option>
+    <option name="projectBuildClasspath">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <ExternalProjectBuildClasspathPojo>
+              <option name="modulesBuildClasspath">
+                <map>
+                  <entry key="$PROJECT_DIR$">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="entries">
+                          <list>
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin/1.2.51/aecae45d74a02e6302b967d37c948802d03495f/kotlin-gradle-plugin-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin/1.2.51/d98bfc97c13e068b768f95271b6a58bafd16fce7/kotlin-gradle-plugin-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-allopen/1.2.51/af1c718bc8cd0ecb53567ddcbeedebedb7ba5aa0/kotlin-allopen-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-allopen/1.2.51/7c8287028a8fcab041570b971cd46c1eaa3aa04b/kotlin-allopen-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/io.spring.gradle/dependency-management-plugin/1.0.5.RELEASE/e9f2761e13da4228793ee5fcaa983889e68c4c61/dependency-management-plugin-1.0.5.RELEASE-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/io.spring.gradle/dependency-management-plugin/1.0.5.RELEASE/3589987a66349bdc10b18c6c4a5463ffd084c908/dependency-management-plugin-1.0.5.RELEASE.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-gradle-plugin/2.0.2.RELEASE/d283fee446dd4fb54100c034fe8cecfa0a869498/spring-boot-gradle-plugin-2.0.2.RELEASE-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-gradle-plugin/2.0.2.RELEASE/b35e0fcf1acca8c38899af0f06269955f1bf553c/spring-boot-gradle-plugin-2.0.2.RELEASE.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-api/1.2.51/e43dea38cb1055ee07824ea9b5914c16fc8f02f0/kotlin-gradle-plugin-api-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-api/1.2.51/94527237963c0dbd7c1c7f0b9a63c629401e72e0/kotlin-gradle-plugin-api-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.2.51/649a609725b857dd285cf69d49d4f1f77335076e/kotlin-stdlib-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.2.51/fa8127e505bff50fec291d0dd619d1bda5c619e0/kotlin-stdlib-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.2.51/8bb19b3d20cbb1498ce98ac56cad1107ed5355b0/kotlin-compiler-embeddable-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.2.51/205147cc6c2dcbe7d9d71125fe315b14b8a14be4/kotlin-compiler-embeddable-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-annotation-processing-gradle/1.2.51/c3d255ffe5c10d60e3c09ba5aee868a3907e33ad/kotlin-annotation-processing-gradle-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-annotation-processing-gradle/1.2.51/8cd0f527d68195e3c008302744ad319d24499cd7/kotlin-annotation-processing-gradle-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions/1.2.51/3a04003373be1b42f8615dd6fc737c44d80ebd4b/kotlin-android-extensions-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions/1.2.51/1755c607e5fabf4ba949ef626c73fc7421d35123/kotlin-android-extensions-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-runner/1.2.51/c95f21556c0ee6246745bca9f15f45400b39c737/kotlin-compiler-runner-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-runner/1.2.51/f33d0a38c0d98e249e15a72616837c26bb15aabd/kotlin-compiler-runner-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.2.51/f55f2b742e87f3424754e572763c9960dab8a5e8/kotlin-reflect-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.2.51/36b719a7b84452dd13eeec979d8c82bfb765c57d/kotlin-reflect-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-common/1.2.51/8bed853d57ddc87fcab4c100421aa8a654d36f99/kotlin-scripting-common-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-common/1.2.51/7861b42b7e5625df4a230d868476d4cda331be77/kotlin-scripting-common-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-compiler/1.2.51/ca2324aa47aec7266ee6b7839596899a5a92a250/kotlin-scripting-compiler-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-compiler/1.2.51/a8600da3b271224db902d8a30a4898a861b008ca/kotlin-scripting-compiler-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-gradle/1.2.51/bead3afbce03fb4bbc121779db5b2ef7080e0c74/kotlin-scripting-gradle-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-gradle/1.2.51/ba083f1a77caf84bbf1cd43e86e935681cc2a26d/kotlin-scripting-gradle-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-loader-tools/2.0.2.RELEASE/fb36a0b30c22e3f260e3dad1c54a12c181c36228/spring-boot-loader-tools-2.0.2.RELEASE-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-loader-tools/2.0.2.RELEASE/f1460752eda55972571a9651fcdfcb6cceef183d/spring-boot-loader-tools-2.0.2.RELEASE.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.14/43a23e357fa7b187c261520914c0b001ea1a62a2/commons-compress-1.14-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.14/7b18320d668ab080758bf5383d6d8fcf750babce/commons-compress-1.14.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/1.2.51/6522b3c352cee32fa8a6a8184d955f20af8469b0/kotlin-script-runtime-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/1.2.51/6f8ef6758f396b354e422c3e82d9cd14795fe0e2/kotlin-script-runtime-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-build-common/1.2.51/a491f5743a35bb1b884b0a5141c33abdea08654c/kotlin-build-common-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-build-common/1.2.51/114e0ff82a2fc1f4e55d6525137a69f2f8da4f52/kotlin-build-common-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-client/1.2.51/5a2d34f7ec26cdeddb329bda7f6fa99a44b981be/kotlin-daemon-client-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-client/1.2.51/54cd719230806bfc119b6f9a28e33416233a8971/kotlin-daemon-client-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core/0.20/69aa4e6352eee317fe50ae2146ec628c59be3845/kotlinx-coroutines-core-0.20-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core/0.20/5f3fa9b5b2dc9cfc0d9358d5b2cab154d590a564/kotlinx-coroutines-core-0.20.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-jvm/1.2.51/958337dbddf8b87f3f688b942b89738356745326/kotlin-scripting-jvm-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-jvm/1.2.51/f80afc81cf004fb572f8a09353960490ab6630c6/kotlin-scripting-jvm-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-misc/1.2.51/f15e62280560a4167f13b38cf40869eb4a8542c4/kotlin-scripting-misc-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-misc/1.2.51/e7645e214f9178ed1423c937fc4e2f3bd04c8831/kotlin-scripting-misc-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.springframework/spring-core/5.0.6.RELEASE/86ca74938ace10c2aff781b6d93888435baf7474/spring-core-5.0.6.RELEASE-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.springframework/spring-core/5.0.6.RELEASE/984a52455b1be596b7f1a29f62d21d2f483eb764/spring-core-5.0.6.RELEASE.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.2.51/e8c91083a5863d94fdc2836459e7e7a555774be9/kotlin-stdlib-common-1.2.51-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.2.51/e4a9d4b13ab19ed1e6531fce6df98e8cfa7f7301/kotlin-stdlib-common-1.2.51.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/5991ca87ef1fb5544943d9abc5a9a37583fabe03/annotations-13.0-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.0.6.RELEASE/ca475012ae43a0745d3cfc0bae4e52de0fddc29f/spring-jcl-5.0.6.RELEASE-sources.jar" />
+                            <option value="F:/GRADLE_LIB/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.0.6.RELEASE/295ee4e8657e9c1fd327735c01d5fbce339cc44d/spring-jcl-5.0.6.RELEASE.jar" />
+                          </list>
+                        </option>
+                        <option name="path" value="$PROJECT_DIR$" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="name" value="excel2mysql" />
+              <option name="projectBuildClasspath">
+                <list>
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/announce" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/antlr" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/base-services" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/base-services-groovy" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/build-cache" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/build-cache-http" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/build-comparison" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/build-init" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/build-option" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/cli" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/code-quality" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/composite-builds" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/core" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/core-api" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/dependency-management" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/diagnostics" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/ear" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/ide" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/ide-native" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/ide-play" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/installation-beacon" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/internal-android-performance-testing" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/internal-integ-testing" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/internal-performance-testing" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/internal-testing" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/ivy" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/jacoco" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/javascript" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/jvm-services" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/language-groovy" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/language-java" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/language-jvm" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/language-native" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/language-scala" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/launcher" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/logging" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/maven" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/messaging" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/model-core" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/model-groovy" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/native" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/osgi" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/persistent-cache" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/platform-base" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/platform-jvm" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/platform-native" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/platform-play" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/plugin-development" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/plugin-use" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/plugins" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/process-services" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/publish" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/reporting" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/resources" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/resources-gcs" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/resources-http" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/resources-s3" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/resources-sftp" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/scala" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/signing" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/test-kit" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/testing-base" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/testing-jvm" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/testing-native" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/tooling-api" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/tooling-api-builders" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/version-control" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/workers" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/src/wrapper" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/ant-1.9.9.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/ant-launcher-1.9.9.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-base-services-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-base-services-groovy-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-build-cache-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-build-option-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-cli-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-core-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-core-api-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-docs-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-installation-beacon-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-jvm-services-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-kotlin-dsl-0.14.2.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-kotlin-dsl-tooling-builders-0.14.2.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-kotlin-dsl-tooling-models-0.14.2.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-launcher-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-logging-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-messaging-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-model-core-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-model-groovy-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-native-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-persistent-cache-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-process-services-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-resources-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-runtime-api-info-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-tooling-api-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/gradle-wrapper-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/groovy-all-2.4.12.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-announce-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-antlr-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-build-cache-http-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-build-comparison-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-build-init-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-code-quality-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-composite-builds-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-dependency-management-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-diagnostics-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-ear-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-ide-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-ide-native-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-ide-play-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-ivy-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-jacoco-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-javascript-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-language-groovy-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-language-java-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-language-jvm-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-language-native-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-language-scala-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-maven-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-osgi-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-platform-base-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-platform-jvm-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-platform-native-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-platform-play-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-plugin-development-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-plugin-use-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-plugins-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-publish-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-reporting-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-resources-gcs-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-resources-http-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-resources-s3-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-resources-sftp-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-scala-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-signing-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-test-kit-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-testing-base-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-testing-jvm-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-testing-native-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-tooling-api-builders-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-version-control-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/gradle-workers-4.5.jar" />
+                  <option value="F:/develop/gradle-4.5-all/gradle-4.5/lib/plugins/ivy-2.2.0.jar" />
+                  <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
+                  <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
+                </list>
+              </option>
+            </ExternalProjectBuildClasspathPojo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/Desktop/demo" value="PREVIEW" />
+        <entry key="C:/idea-workspace/login_server" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+        <entry key="$PROJECT_DIR$/../exceltomysql" value="PREVIEW" />
+        <entry key="E:/360极速浏览器下载/ssm-easy-template-master" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="excel2mysql" type="b2602c69:ProjectViewProjectNode" />
+              <item name="excel2mysql" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="excel2mysql" type="b2602c69:ProjectViewProjectNode" />
+              <item name="excel2mysql" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="ExportData" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="excel2mysql_main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.asuka.export.ExportData" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e9147048-6529-4db8-bd3b-cfea2d90d63c" name="Default" comment="" />
+      <created>1532603407732</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1532603407732</updated>
+      <workItem from="1532603410549" duration="53000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="53000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Spring" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info id="Designer" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Build" visible="true" weight="0.3293348" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Gradle" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
