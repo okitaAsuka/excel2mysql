@@ -17,6 +17,20 @@ import java.text.DecimalFormat
 object ExcelUtil {
 
     private var logger: Logger = LoggerFactory.getLogger(javaClass)
+
+    /**
+     * 判断是否是需要读取的字段
+     */
+    fun needReadData (sheet: Sheet, cellIndex: Int, rowNum: Int): Boolean {
+
+        val theRow: Row = sheet.getRow(rowNum)
+        var theCell = theRow.getCell(cellIndex)
+
+        if (theCell == null || theCell.cellTypeEnum == CellType.BLANK || theCell.stringCellValue == "")
+            return false
+        return true
+    }
+
     fun getAssignRowCellData(sheet: Sheet, cell: Cell, rowNum: Int): String {
 
         val theRow: Row = sheet.getRow(rowNum)

@@ -1,12 +1,12 @@
 package org.asuka.export.read
 
 import com.alibaba.druid.util.StringUtils
-import com.biligame.darkboom.ReadModel
 import org.apache.poi.openxml4j.opc.OPCPackage
 import org.apache.poi.ss.usermodel.CellType
 import org.apache.poi.ss.usermodel.Row
 import org.apache.poi.ss.usermodel.Sheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
+import org.asuka.export.ReadModel
 import org.asuka.export.dao.CoreDao
 import org.asuka.export.util.ExcelUtil
 import org.slf4j.Logger
@@ -38,7 +38,11 @@ class ExcelReader {
     @Value("\${fileType}")
     lateinit var fileType: String
 
-    val tablePrefix: String = "db_cfg_"
+    @Value("\${tablePrefix}")
+    lateinit var tablePrefix: String
+
+    @Value("\${createInfoRowNum}")
+    var createInfoRowNum: Int = 0
 
     val drop: String = "drop table "
 
@@ -57,7 +61,7 @@ class ExcelReader {
         sql.append("$tableName ( ")
 
         // 从第五行中读取到创库信息
-        val dbRow: Row = sheet.getRow(4)
+        val dbRow: Row = sheet.getRow(createInfoRowNum)
 
         var fields = StringBuffer()
 
@@ -96,10 +100,10 @@ class ExcelReader {
             logger.info("准备读取数据并写入$tableName, 共有${sheet.lastRowNum}行")
             var insertSql = StringBuffer(insert + tableName + " (${fields}) values ")
 
-            // 从第五行中读取到创库信息
-            for (index in 5..sheet.lastRowNum) {
+            // 从第x行中读取到创库信息
+            for (index in (createInfoRowNum + 1)..sheet.lastRowNum) {
 
-                val dataRow = sheet.getRow(index) ?: continue
+                val dataRow = sheet.getRow(index)?: continue
 
                 // 如果首列ID列为空则跳过
                 val firstRow = dataRow.getCell(0)
@@ -107,21 +111,27 @@ class ExcelReader {
                     continue
 
                 val idRowValue = ExcelUtil.getCellData(firstRow)
-                if (idRowValue.equals(""))
+                if (idRowValue == "")
                     continue
 
                 insertSql.append("(")
                 var dataSB = StringBuffer("")
 
-                dataRow.forEach {
 
-                    // 有配置数据库字段才读取
-                    if (ExcelUtil.getAssignRowCellData(sheet, it, 4) > "") {
-                        var data = ExcelUtil.getCellData(it)
+                for (cellIndex in 0..dataRow.lastCellNum) {
 
-                        if (!StringUtils.isNumber(data))
-                            data = "'$data'"
-                        dataSB.append(data + ",")
+                    if (ExcelUtil.needReadData(sheet, cellIndex, createInfoRowNum)) {
+
+                        val row = dataRow.getCell(cellIndex)
+                        var data = ""
+                        if (row != null) {
+
+                            data = ExcelUtil.getCellData(row)
+                            if (!StringUtils.isNumber(data))
+                                data = "'$data'"
+                        } else // 处理空字符串
+                            data = "''"
+                        dataSB.append("$data,")
                     }
                 }
                 dataSB = StringBuffer(dataSB.removeRange(IntRange(dataSB.length - 1, dataSB.length - 1)))
@@ -150,15 +160,15 @@ class ExcelReader {
 
 //        workbook!!.sheetIterator().forEach {
 
-            logger.info("读取页签${sheetIndex}:${it.sheetName}")
-            logger.info("共有${it.lastRowNum + 1}行数据")
+        logger.info("读取页签${sheetIndex}:${it.sheetName}")
+        logger.info("共有${it.lastRowNum + 1}行数据")
 
-            val tableName = tablePrefix + tName
-            val fields = createTable(it, tableName)
+        val tableName = tablePrefix + tName
+        val fields = createTable(it, tableName)
 //            logger.info(fields)
 
-            // 读取写入数据
-            readAndWriteData(it, tableName, fields)
+        // 读取写入数据
+        readAndWriteData(it, tableName, fields)
 //        }
     }
 

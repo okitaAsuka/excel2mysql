@@ -19,5 +19,9 @@ logging:
 
 docPath: "F:\\test"
 fileType: ".xlsx"
-readFilesName: "Mail"
+tablePrefix: "sdmht_cfg_"
+createInfoRowNum: 4
+
+#split by ,
+readFilesName: "challenge_base,challenge_character,challenge_character_lv,challenge_event,challenge_lv,challenge_map,challenge_reward,challenge_skill"
 
