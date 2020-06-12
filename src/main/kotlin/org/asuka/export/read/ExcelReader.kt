@@ -1,6 +1,5 @@
 package org.asuka.export.read
 
-import com.alibaba.druid.util.StringUtils
 import org.apache.poi.openxml4j.opc.OPCPackage
 import org.apache.poi.ss.usermodel.CellType
 import org.apache.poi.ss.usermodel.Row
@@ -9,6 +8,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import org.asuka.export.ReadModel
 import org.asuka.export.dao.CoreDao
 import org.asuka.export.util.ExcelUtil
+import org.asuka.export.util.StringUtil
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
@@ -127,7 +127,7 @@ class ExcelReader {
                         if (row != null) {
 
                             data = ExcelUtil.getCellData(row)
-                            if (!StringUtils.isNumber(data))
+                            if (!StringUtil.isNumber(data))
                                 data = "'$data'"
                         } else // 处理空字符串
                             data = "''"
@@ -180,7 +180,7 @@ class ExcelReader {
 
         if (checkFile.exists()) {
 
-            val pkg: OPCPackage = OPCPackage.open(File(path))
+            val pkg = OPCPackage.open(File(path))
             wb = XSSFWorkbook(pkg)
             this.workbook = wb
             logger.info("读取文件" + path)

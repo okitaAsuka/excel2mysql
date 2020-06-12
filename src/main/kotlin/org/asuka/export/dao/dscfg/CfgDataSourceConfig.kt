@@ -1,6 +1,6 @@
 package org.asuka.export.dao.dscfg
 
-import com.alibaba.druid.pool.DruidDataSource
+import com.zaxxer.hikari.HikariDataSource
 import org.mybatis.spring.annotation.MapperScan
 import org.springframework.context.annotation.Configuration
 import org.mybatis.spring.SqlSessionTemplate
@@ -28,7 +28,7 @@ class CfgDataSourceConfig {
     @Primary
     @ConfigurationProperties(prefix = "cfg.datasource") // prefix值必须是application.yml中对应属性的前缀
     fun cfgDataSource(): DataSource {
-        return DruidDataSource()
+        return HikariDataSource()
     }
 
     @Bean
@@ -44,7 +44,8 @@ class CfgDataSourceConfig {
             configuration.isMapUnderscoreToCamelCase = true
 
             bean.setConfiguration(configuration)
-            bean.setMapperLocations(resolver.getResources("classpath*:com/biligame/darkboom/dao/mapper/cfg/*.xml"))
+
+            bean.setMapperLocations(resolver.getResource("classpath*:org/asuka/export/dao/mapper/cfg/*.xml"))
             return bean.`object`
         } catch (e: Exception) {
             e.printStackTrace()

@@ -2,26 +2,26 @@
 #base 为cfg库
 cfg:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/db_cfg?useUnicode=true&characterEncoding=utf-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://127.0.0.1:3306/excel2mysql?useUnicode=true&characterEncoding=utf-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull
     username: root
     password: abcd1234
     driver-class-name: com.mysql.cj.jdbc.Driver
-    type: com.alibaba.druid.pool.DruidDataSource
+#    type: com.alibaba.druid.pool.DruidDataSource
 
 logging:
   level:
    #打印SQL信息
    root: warn
-   com.biligame.darkboom.dao.mapper: DEBUG
-   com.biligame.darkboom: INFO
+   org.asuka.export.dao.mapper: DEBUG
+   org.asuka.export: INFO
    org.springframework: WARN
    org.mybatis: ERROR
 
-docPath: "F:\\test"
+docPath: "C:\\doc"
 fileType: ".xlsx"
-tablePrefix: "sdmht_cfg_"
+tablePrefix: "cfg_"
 createInfoRowNum: 4
 
 #split by ,
-readFilesName: "challenge_base,challenge_character,challenge_character_lv,challenge_event,challenge_lv,challenge_map,challenge_reward,challenge_skill"
+readFilesName: "example"
 
