@@ -2,7 +2,7 @@
 #base 为cfg库
 cfg:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/excel2mysql?useUnicode=true&characterEncoding=utf-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull
+    jdbc-url: jdbc:mysql://127.0.0.1:3306/excel2mysql?useUnicode=true&characterEncoding=utf-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull
     username: root
     password: abcd1234
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -17,11 +17,11 @@ logging:
    org.springframework: WARN
    org.mybatis: ERROR
 
-docPath: "C:\\doc"
+docPath: "F:\\doc"
 fileType: ".xlsx"
 tablePrefix: "cfg_"
 createInfoRowNum: 4
 
 #split by ,
-readFilesName: "example"
+readFilesName: "cfg_example"
 

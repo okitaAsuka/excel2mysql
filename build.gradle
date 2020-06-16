@@ -7,7 +7,7 @@ buildscript {
         mavenCentral()
         jcenter()
         maven {
-            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+            url 'https://maven.aliyun.com/nexus/content/groups/public/'
         }
     }
     dependencies {
@@ -63,4 +63,25 @@ compileKotlin {
 }
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "org.asuka.export.ExportDataKt"
+    }
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+//sourceSets.main.resources.srcDirs = ["src/main/kotlin","src/main/resources"]
+
+processResources {
+    from('src/main/kotlin') {
+        include '**/*.xml'
+        exclude "**/*.java"
+    }
+    from('src/main/resources') {
+        exclude { "**/*.*" }
+    }
 }

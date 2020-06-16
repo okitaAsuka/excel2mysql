@@ -1,16 +1,16 @@
 package org.asuka.export.dao.dscfg
 
 import com.zaxxer.hikari.HikariDataSource
-import org.mybatis.spring.annotation.MapperScan
-import org.springframework.context.annotation.Configuration
-import org.mybatis.spring.SqlSessionTemplate
 import org.apache.ibatis.session.SqlSessionFactory
-import org.springframework.beans.factory.annotation.Qualifier
-import org.springframework.context.annotation.Primary
-import org.springframework.context.annotation.Bean
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver
 import org.mybatis.spring.SqlSessionFactoryBean
+import org.mybatis.spring.SqlSessionTemplate
+import org.mybatis.spring.annotation.MapperScan
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.boot.context.properties.ConfigurationProperties
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+import org.springframework.context.annotation.Primary
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver
 import javax.sql.DataSource
 
 
@@ -21,10 +21,10 @@ import javax.sql.DataSource
  * @Date: Create in 2018.04.26
  */
 @Configuration
-@MapperScan(basePackages = arrayOf("com.biligame.darkboom.dao.mapper.cfg"), sqlSessionTemplateRef = "cfgSqlSessionTemplate")
+@MapperScan(basePackages = ["org.asuka.export.dao.mapper.cfg"], sqlSessionTemplateRef = "cfgSqlSessionTemplate")
 class CfgDataSourceConfig {
 
-    @Bean(name = arrayOf("cfgDataSource"))
+    @Bean(name = ["cfgDataSource"])
     @Primary
     @ConfigurationProperties(prefix = "cfg.datasource") // prefix值必须是application.yml中对应属性的前缀
     fun cfgDataSource(): DataSource {
@@ -34,19 +34,24 @@ class CfgDataSourceConfig {
     @Bean
     @Throws(Exception::class)
     fun cfgSqlSessionFactory(@Qualifier("cfgDataSource") dataSource: DataSource): SqlSessionFactory {
-        val bean = SqlSessionFactoryBean()
-        bean.setDataSource(dataSource)
+        val sessionFactory = SqlSessionFactoryBean()
+        sessionFactory.setDataSource(dataSource)
         //添加mapper目录
         val resolver = PathMatchingResourcePatternResolver()
         try {
 
-            var configuration: org.apache.ibatis.session.Configuration = org.apache.ibatis.session.Configuration()
-            configuration.isMapUnderscoreToCamelCase = true
+//            var configuration: org.apache.ibatis.session.Configuration = org.apache.ibatis.session.Configuration()
+//            configuration.isMapUnderscoreToCamelCase = true
+//
+//            sessionFactory.setConfiguration(configuration)
+//
+//            sessionFactory.setMapperLocations(resolver.getResource("classpath*:org/asuka/export/dao/mapper/cfg/*.xml"))
+//            return sessionFactory.`object`
+//            sessionFactory.setTypeAliasesPackage("com.louis.springboot.**.model") // 扫描Model
 
-            bean.setConfiguration(configuration)
 
-            bean.setMapperLocations(resolver.getResource("classpath*:org/asuka/export/dao/mapper/cfg/*.xml"))
-            return bean.`object`
+            sessionFactory.setMapperLocations(*resolver.getResources("classpath*:**/mapper/cfg/*.xml")) // 扫描映射文件
+            return sessionFactory.getObject()
         } catch (e: Exception) {
             e.printStackTrace()
             throw RuntimeException(e)
