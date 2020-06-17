@@ -45,6 +45,12 @@ class ExcelReader {
     @Value("\${createInfoRowNum}")
     var createInfoRowNum: Int = 0
 
+    @Value("\${exportType}")
+    var exportType: Int = 0
+
+    @Value("{exportPath}")
+    lateinit var exportPath: String
+
     val drop: String = "drop table "
 
     val create: String = "create table "
@@ -94,59 +100,74 @@ class ExcelReader {
     /**
      * 读取数据并写入
      */
-    private fun readAndWriteData(sheet: Sheet, tableName: String, fields: String) {
+    private fun writeData(sheet: Sheet, tableName: String, fields: String) {
 
         try {
 
             logger.info("准备读取数据并写入$tableName, 共有${sheet.lastRowNum}行")
-            var insertSql = StringBuffer(insert + tableName + " (${fields}) values ")
 
-            // 从第x行中读取到创库信息
-            for (index in (createInfoRowNum + 1)..sheet.lastRowNum) {
-
-                val dataRow = sheet.getRow(index)?: continue
-
-                // 如果首列ID列为空则跳过
-                val firstRow = dataRow.getCell(0)
-                if (firstRow == null || firstRow.cellTypeEnum == CellType.BLANK)
-                    continue
-
-                val idRowValue = ExcelUtil.getCellData(firstRow)
-                if (idRowValue == "")
-                    continue
-
-                insertSql.append("(")
-                var dataSB = StringBuffer("")
-
-
-                for (cellIndex in 0..dataRow.lastCellNum) {
-
-                    if (ExcelUtil.needReadData(sheet, cellIndex, createInfoRowNum)) {
-
-                        val row = dataRow.getCell(cellIndex)
-                        var data: String
-                        if (row != null) {
-
-                            data = ExcelUtil.getCellData(row)
-                            if (!StringUtil.isNumber(data))
-                                data = "'$data'"
-                        } else // 处理空字符串
-                            data = "''"
-                        dataSB.append("$data,")
-                    }
-                }
-                dataSB = StringBuffer(dataSB.removeRange(IntRange(dataSB.length - 1, dataSB.length - 1)))
-                insertSql.append(dataSB.toString())
-                insertSql.append("),")
+            if (exportType == 1) {
+                writeToMysql(sheet, tableName, fields)
+            } else {
+                writeToJsonFile(sheet, tableName, fields)
             }
-
-            insertSql = StringBuffer(insertSql.removeRange(IntRange(insertSql.length - 1, insertSql.length - 1)))
-            insertSql.append(";")
-
-            coreDao.sqlExecute(insertSql.toString())
         } catch (e: Exception) {
             e.printStackTrace()
         }
+    }
+
+    private fun writeToJsonFile(sheet: Sheet, tableName: String, fields: String) {
+
+    }
+
+    fun writeToMysql(sheet: Sheet, tableName: String, fields: String) {
+
+        var insertSql = StringBuffer(insert + tableName + " (${fields}) values ")
+
+        // 从第x行中读取到创库信息
+        for (index in (createInfoRowNum + 1)..sheet.lastRowNum) {
+
+            val dataRow = sheet.getRow(index) ?: continue
+
+            // 如果首列ID列为空则跳过
+            val firstRow = dataRow.getCell(0)
+            if (firstRow == null || firstRow.cellType == CellType.BLANK)
+                continue
+
+            val idRowValue = ExcelUtil.getCellData(firstRow)
+            if (idRowValue.isBlank())
+                continue
+
+
+
+            insertSql.append("(")
+            var dataSB = StringBuffer("")
+
+            for (cellIndex in 0..dataRow.lastCellNum) {
+
+                if (ExcelUtil.needReadData(sheet, cellIndex, createInfoRowNum)) {
+
+                    val row = dataRow.getCell(cellIndex)
+                    var data: String
+                    if (row != null) {
+
+                        data = ExcelUtil.getCellData(row)
+                        if (!StringUtil.isNumber(data))
+                            data = "'$data'"
+                    } else // 处理空字符串
+                        data = "''"
+                    dataSB.append("$data,")
+                }
+            }
+            dataSB = StringBuffer(dataSB.removeRange(IntRange(dataSB.length - 1, dataSB.length - 1)))
+            insertSql.append(dataSB.toString())
+            insertSql.append("),")
+        }
+
+        insertSql = StringBuffer(insertSql.removeRange(IntRange(insertSql.length - 1, insertSql.length - 1)))
+        insertSql.append(";")
+
+        coreDao.sqlExecute(insertSql.toString())
     }
 
     /**
@@ -169,7 +190,7 @@ class ExcelReader {
 //            logger.info(fields)
 
         // 读取写入数据
-        readAndWriteData(it, tableName, fields)
+        writeData(it, tableName, fields)
 //        }
     }
 

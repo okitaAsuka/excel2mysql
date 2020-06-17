@@ -1,5 +1,5 @@
 
-#base 为cfg库
+#base
 cfg:
   datasource:
     jdbc-url: jdbc:mysql://127.0.0.1:3306/excel2mysql?useUnicode=true&characterEncoding=utf-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull
@@ -10,14 +10,17 @@ cfg:
 
 logging:
   level:
-   #打印SQL信息
    root: warn
    org.asuka.export.dao.mapper: DEBUG
    org.asuka.export: INFO
    org.springframework: WARN
    org.mybatis: ERROR
 
-docPath: "F:\\doc"
+# export type，1：mysql，2：json file
+exportType: 1
+exportPath: "d:\\doc\\jsonCfg\\"
+
+docPath: "d:\\doc"
 fileType: ".xlsx"
 tablePrefix: "cfg_"
 createInfoRowNum: 4

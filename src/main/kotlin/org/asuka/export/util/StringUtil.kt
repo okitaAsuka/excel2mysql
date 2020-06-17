@@ -8,7 +8,7 @@ package org.asuka.export.util
 object StringUtil {
 
     fun isNumber(str: String): Boolean {
-        if (str.length == 0) {
+        if (str.isEmpty()) {
             return false
         }
         var sz = str.length
@@ -44,7 +44,7 @@ object StringUtil {
         // make a valid number (e.g. chars[0..5] = "1234E")
         while (i < sz || i < sz + 1 && allowSigns && !foundDigit) {
             val ch = str[i]
-            if (ch >= '0' && ch <= '9') {
+            if (ch in '0'..'9') {
                 foundDigit = true
                 allowSigns = false
             } else if (ch == '.') {
@@ -77,7 +77,7 @@ object StringUtil {
         }
         if (i < str.length) {
             val ch = str[i]
-            if (ch >= '0' && ch <= '9') {
+            if (ch in '0'..'9') {
                 // no type qualifier, OK
                 return true
             }

@@ -7,6 +7,7 @@ import org.apache.poi.ss.usermodel.Sheet
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import java.text.DecimalFormat
+import kotlin.math.roundToInt
 
 
 /**
@@ -26,7 +27,7 @@ object ExcelUtil {
         val theRow: Row = sheet.getRow(rowNum)
         var theCell = theRow.getCell(cellIndex)
 
-        if (theCell == null || theCell.cellTypeEnum == CellType.BLANK || theCell.stringCellValue == "")
+        if (theCell == null || theCell.cellType == CellType.BLANK || theCell.stringCellValue == "")
             return false
         return true
     }
@@ -36,7 +37,7 @@ object ExcelUtil {
         val theRow: Row = sheet.getRow(rowNum)
         var theCell = theRow.getCell(cell.columnIndex)
 
-        if (theCell == null || theCell.cellTypeEnum == CellType.BLANK)
+        if (theCell == null || theCell.cellType == CellType.BLANK)
             return ""
         return theCell.stringCellValue.trim()
     }
@@ -44,12 +45,12 @@ object ExcelUtil {
     fun getCellData(cell: Cell): String {
 
         try {
-            if (cell.cellTypeEnum == CellType.NUMERIC) {
+            if (cell.cellType == CellType.NUMERIC) {
                 // 返回数值类型的值
                 var inputValue: Any? = null// 单元格值
-                val longVal = Math.round(cell.numericCellValue)
+                val longVal = cell.numericCellValue.roundToInt()
                 val doubleVal = cell.numericCellValue
-                if (java.lang.Double.parseDouble(longVal.toString() + ".0") == doubleVal) {   //判断是否含有小数位.0
+                if (java.lang.Double.parseDouble("$longVal.0") == doubleVal) {   //判断是否含有小数位.0
                     inputValue = longVal
                 } else {
                     inputValue = doubleVal
@@ -57,14 +58,14 @@ object ExcelUtil {
                 val df = DecimalFormat("#.####")    //格式化为四位小数，按自己需求选择；
                 return df.format(inputValue).toString()      //返回String类型
             } else {
-                cell.setCellType(CellType.STRING)
+                cell.cellType = CellType.STRING
                 return cell.stringCellValue.trim()
             }
         } catch (e: Exception) {
             e.printStackTrace()
-            logger.error("未处理的类型${cell.cellTypeEnum.name}")
+            logger.error("未处理的类型${cell.cellType.name}")
         }
 
-        throw IllegalStateException("未处理的类型${cell.cellTypeEnum.name}")
+        throw IllegalStateException("未处理的类型${cell.cellType.name}")
     }
 }
