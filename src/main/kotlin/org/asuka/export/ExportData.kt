@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import kotlin.system.exitProcess
 
 /**
  * @author: 援护防御
@@ -27,9 +28,9 @@ class ExportData {
 
     private fun init() {
 
-        if (readFilesName.equals("")) {
+        if (readFilesName == "") {
             logger.error("没有配置需要读取的文件!")
-            System.exit(0)
+            exitProcess(0)
         }
 
         for (s in readFilesName.split(",")) {

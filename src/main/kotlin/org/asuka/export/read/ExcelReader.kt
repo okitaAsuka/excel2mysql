@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 import java.io.File
+import kotlin.system.exitProcess
 
 /**
  * @author: orange
@@ -83,7 +84,7 @@ class ExcelReader {
         sql = StringBuffer(sql.removeRange(IntRange(sql.length - 1, sql.length - 1)))
         sql.append(") ENGINE=InnoDB DEFAULT CHARSET=utf8;")
 
-        coreDao.sqlExecute(drop + " if exists $tableName;")
+        coreDao.sqlExecute("$drop if exists $tableName;")
         coreDao.sqlExecute(sql.toString())
 
         fields = StringBuffer(fields.removeRange(IntRange(fields.length - 1, fields.length - 1)))
@@ -123,7 +124,7 @@ class ExcelReader {
                     if (ExcelUtil.needReadData(sheet, cellIndex, createInfoRowNum)) {
 
                         val row = dataRow.getCell(cellIndex)
-                        var data = ""
+                        var data: String
                         if (row != null) {
 
                             data = ExcelUtil.getCellData(row)
@@ -183,12 +184,12 @@ class ExcelReader {
             val pkg = OPCPackage.open(File(path))
             wb = XSSFWorkbook(pkg)
             this.workbook = wb
-            logger.info("读取文件" + path)
+            logger.info("读取文件$path")
 
             pkg.close()
         } else {
-            logger.error("读取文件失败" + path)
-            System.exit(0)
+            logger.error("file not found:$path")
+            exitProcess(0)
         }
     }
 
