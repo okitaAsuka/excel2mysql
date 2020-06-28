@@ -48,7 +48,7 @@ class ExcelReader {
     @Value("\${exportType}")
     var exportType: Int = 0
 
-    @Value("{exportPath}")
+    @Value("\${exportPath}")
     lateinit var exportPath: String
 
     val drop: String = "drop table "
@@ -67,7 +67,7 @@ class ExcelReader {
         sql.append(create)
         sql.append("$tableName ( ")
 
-        // 从第五行中读取到创库信息
+        // 从指定行中读取到字段信息
         val dbRow: Row = sheet.getRow(createInfoRowNum)
 
         var fields = StringBuffer()
@@ -97,30 +97,23 @@ class ExcelReader {
         return fields.toString()
     }
 
-    /**
-     * 读取数据并写入
-     */
-    private fun writeData(sheet: Sheet, tableName: String, fields: String) {
+    private fun isEmptyRow(dataRow: Row) : Boolean {
 
-        try {
+        // 如果首列ID列为空则跳过
+        val firstRow = dataRow.getCell(0)
+        if (firstRow == null || firstRow.cellType == CellType.BLANK)
+            return true
 
-            logger.info("准备读取数据并写入$tableName, 共有${sheet.lastRowNum}行")
+        val idRowValue = ExcelUtil.getCellData(firstRow)
+        if (idRowValue.isBlank())
+            return true
 
-            if (exportType == 1) {
-                writeToMysql(sheet, tableName, fields)
-            } else {
-                writeToJsonFile(sheet, tableName, fields)
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-    }
-
-    private fun writeToJsonFile(sheet: Sheet, tableName: String, fields: String) {
-
+        return false
     }
 
     fun writeToMysql(sheet: Sheet, tableName: String, fields: String) {
+
+        logger.info("准备读取数据并写入$tableName, 共有${sheet.lastRowNum}行")
 
         var insertSql = StringBuffer(insert + tableName + " (${fields}) values ")
 
@@ -129,16 +122,8 @@ class ExcelReader {
 
             val dataRow = sheet.getRow(index) ?: continue
 
-            // 如果首列ID列为空则跳过
-            val firstRow = dataRow.getCell(0)
-            if (firstRow == null || firstRow.cellType == CellType.BLANK)
+            if (isEmptyRow(dataRow))
                 continue
-
-            val idRowValue = ExcelUtil.getCellData(firstRow)
-            if (idRowValue.isBlank())
-                continue
-
-
 
             insertSql.append("(")
             var dataSB = StringBuffer("")
@@ -170,6 +155,65 @@ class ExcelReader {
         coreDao.sqlExecute(insertSql.toString())
     }
 
+    fun writeToJsonFile(sheet: Sheet, tableName: String) {
+
+        // 索引字段名
+        val dbRow: Row = sheet.getRow(createInfoRowNum)
+        var fieldByMap = mutableMapOf<Int, String>()
+        dbRow.forEach {
+
+            val value = ExcelUtil.getCellData(it)
+            if (value > "") {
+                val fieldInfo = value.split(";")
+                fieldByMap[it.columnIndex] = fieldInfo[0]
+            }
+        }
+
+        val sb = StringBuilder("[")
+        for (index in (createInfoRowNum + 1)..sheet.lastRowNum) {
+
+            val dataRow = sheet.getRow(index) ?: continue
+
+            if (isEmptyRow(dataRow))
+                continue
+
+            sb.append("{")
+            for (cellIndex in 0..dataRow.lastCellNum) {
+                if (ExcelUtil.needReadData(sheet, cellIndex, createInfoRowNum)) {
+                    val row = dataRow.getCell(cellIndex)
+                    var data: String
+                    if (row != null) {
+
+                        data = ExcelUtil.getCellData(row)
+                        if (!StringUtil.isNumber(data))
+                            data = "'$data'"
+                    } else // 处理空字符串
+                        data = "''"
+
+                    sb.append("\"${fieldByMap[cellIndex]}\"").append(":").append(data).append(",")
+                }
+            }
+            sb.delete(sb.length - 1, sb.length)
+            sb.append("}")
+
+            if (index != sheet.lastRowNum)
+                sb.append(",")
+        }
+
+        sb.append("]")
+
+        val dic = File(exportPath)
+        if (! dic.exists())
+            dic.mkdir()
+
+        val fullPath = "$exportPath$tableName.json"
+        val file = File(fullPath)
+        if (file.exists())
+            file.delete()
+        file.writeText(sb.toString())
+//        logger.info(sb.toString())
+    }
+
     /**
      * 处理文件,创表
      */
@@ -185,12 +229,18 @@ class ExcelReader {
         logger.info("读取页签${sheetIndex}:${it.sheetName}")
         logger.info("共有${it.lastRowNum + 1}行数据")
 
-        val tableName = tablePrefix + tName
-        val fields = createTable(it, tableName)
+        val name = tablePrefix + tName
+
+        //
+        if (exportType == 1) {
+            val fields = createTable(it, name)
+            // 读取写入数据
+            writeToMysql(it, name, fields)
+        } else {
+            writeToJsonFile(it, name)
+        }
 //            logger.info(fields)
 
-        // 读取写入数据
-        writeData(it, tableName, fields)
 //        }
     }
 

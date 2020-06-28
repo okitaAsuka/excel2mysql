@@ -17,7 +17,7 @@ logging:
    org.mybatis: ERROR
 
 # export type，1：mysql，2：json file
-exportType: 1
+exportType: 2
 exportPath: "d:\\doc\\jsonCfg\\"
 
 docPath: "d:\\doc"
