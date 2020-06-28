@@ -26,5 +26,5 @@ tablePrefix: "cfg_"
 createInfoRowNum: 4
 
 #split by ,
-readFilesName: "cfg_example"
+readFilesName: "example"
 
