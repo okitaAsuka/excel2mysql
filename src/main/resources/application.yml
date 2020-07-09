@@ -1,8 +1,8 @@
 
 #base
-cfg:
+spring:
   datasource:
-    jdbc-url: jdbc:mysql://127.0.0.1:3306/kuyashi?useUnicode=true&characterEncoding=utf-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://127.0.0.1:3306/kuyashi?useUnicode=true&characterEncoding=utf-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull
     username: root
     password: abcd1234
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -32,6 +32,7 @@ json.exportPath: "d:\\doc\\jsonCfg\\"
 mysql.tablePrefix: "k_"
 mysql.createInfoRowNum: 4
 mysql.dropTableBeforeCreate: true
+
 
 
 
