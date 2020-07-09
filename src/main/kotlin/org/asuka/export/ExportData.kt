@@ -21,7 +21,7 @@ class ExportData {
 
     val logger: Logger = LoggerFactory.getLogger(javaClass)
 
-    var readLst: ArrayList<ReadModel> = arrayListOf()
+    var readLst: ArrayList<String> = arrayListOf()
 
     @Value("\${readFilesName}")
     lateinit var readFilesName: String
@@ -34,13 +34,8 @@ class ExportData {
         }
 
         for (s in readFilesName.split(",")) {
-            addFile(ReadModel(s, true))
+            readLst.add(s)
         }
-    }
-
-    fun addFile(model: ReadModel) {
-
-        readLst.add(model)
     }
 
     fun exportData() {
@@ -51,7 +46,7 @@ class ExportData {
         readLst.forEach {
 
             // 读取文件
-            reader.readFile(it.name)
+            reader.readFile(it)
             // 处理文件
             reader.dealFile(it)
         }
@@ -60,6 +55,6 @@ class ExportData {
 
 fun main(args: Array<String>) {
 
-    SpringApplication.run(ExportData::class.java, *args)
-    SpringUtil.getBean(ExportData::class.java).exportData()
+    val ctx = SpringApplication.run(ExportData::class.java, *args)
+    ctx.getBean(ExportData::class.java).exportData()
 }

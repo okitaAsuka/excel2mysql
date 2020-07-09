@@ -5,7 +5,6 @@ import org.apache.poi.ss.usermodel.CellType
 import org.apache.poi.ss.usermodel.Row
 import org.apache.poi.ss.usermodel.Sheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
-import org.asuka.export.ReadModel
 import org.asuka.export.dao.CoreDao
 import org.asuka.export.util.ExcelUtil
 import org.asuka.export.util.StringUtil
@@ -39,26 +38,29 @@ class ExcelReader {
     @Value("\${fileType}")
     lateinit var fileType: String
 
-    @Value("\${tablePrefix}")
-    lateinit var tablePrefix: String
-
-    @Value("\${createInfoRowNum}")
-    var createInfoRowNum: Int = 0
-
     @Value("\${exportType}")
     var exportType: Int = 0
 
-    @Value("\${exportPath}")
+    @Value("\${mysql.tablePrefix}")
+    lateinit var tablePrefix: String
+
+    @Value("\${mysql.createInfoRowNum}")
+    var createInfoRowNum: Int = 0
+
+    @Value("\${mysql.dropTableBeforeCreate}")
+    var dropTableBeforeCreate: Boolean = false
+
+    @Value("\${json.exportPath}")
     lateinit var exportPath: String
 
-    val drop: String = "drop table "
+    val drop: String = "drop table IF EXISTS "
 
-    val create: String = "create table "
+    val create: String = "create table IF NOT EXISTS "
 
     val insert: String = "insert into "
 
     /**
-     * 创建db
+     * create table
      */
     private fun createTable(sheet: Sheet, tableName: String): String {
 
@@ -90,7 +92,9 @@ class ExcelReader {
         sql = StringBuffer(sql.removeRange(IntRange(sql.length - 1, sql.length - 1)))
         sql.append(") ENGINE=InnoDB DEFAULT CHARSET=utf8;")
 
-        coreDao.sqlExecute("$drop if exists $tableName;")
+        if (dropTableBeforeCreate)
+            coreDao.sqlExecute("$drop $tableName;")
+
         coreDao.sqlExecute(sql.toString())
 
         fields = StringBuffer(fields.removeRange(IntRange(fields.length - 1, fields.length - 1)))
@@ -111,45 +115,54 @@ class ExcelReader {
         return false
     }
 
+    fun readCellData(dataRow: Row, sheet: Sheet, dataSB: StringBuilder, fieldByMap:  MutableMap<Int, String>?) {
+
+        for (cellIndex in 0..dataRow.lastCellNum) {
+            if (ExcelUtil.needReadData(sheet, cellIndex, createInfoRowNum)) {
+
+                val row = dataRow.getCell(cellIndex)
+                var data: String
+                if (row != null) {
+
+                    data = ExcelUtil.getCellData(row)
+                    if (!StringUtil.isNumber(data))
+                        data = "'$data'"
+                } else // 处理空字符串
+                    data = "''"
+
+                if (exportType == 1) {
+                    dataSB.append("$data,")
+                } else {
+                    dataSB.append("\"${fieldByMap!![cellIndex]}\"").append(":").append(data).append(",")
+                }
+            }
+        }
+    }
+
     fun writeToMysql(sheet: Sheet, tableName: String, fields: String) {
 
         logger.info("准备读取数据并写入$tableName, 共有${sheet.lastRowNum}行")
 
-        var insertSql = StringBuffer(insert + tableName + " (${fields}) values ")
+        var insertSql = StringBuilder(insert + tableName + " (${fields}) values ")
 
         // 从第x行中读取到创库信息
         for (index in (createInfoRowNum + 1)..sheet.lastRowNum) {
 
             val dataRow = sheet.getRow(index) ?: continue
-
             if (isEmptyRow(dataRow))
                 continue
 
             insertSql.append("(")
-            var dataSB = StringBuffer("")
+            var dataSB = StringBuilder("")
 
-            for (cellIndex in 0..dataRow.lastCellNum) {
+            readCellData(dataRow, sheet, dataSB, null)
 
-                if (ExcelUtil.needReadData(sheet, cellIndex, createInfoRowNum)) {
-
-                    val row = dataRow.getCell(cellIndex)
-                    var data: String
-                    if (row != null) {
-
-                        data = ExcelUtil.getCellData(row)
-                        if (!StringUtil.isNumber(data))
-                            data = "'$data'"
-                    } else // 处理空字符串
-                        data = "''"
-                    dataSB.append("$data,")
-                }
-            }
-            dataSB = StringBuffer(dataSB.removeRange(IntRange(dataSB.length - 1, dataSB.length - 1)))
+            dataSB = StringBuilder(dataSB.removeRange(IntRange(dataSB.length - 1, dataSB.length - 1)))
             insertSql.append(dataSB.toString())
             insertSql.append("),")
         }
 
-        insertSql = StringBuffer(insertSql.removeRange(IntRange(insertSql.length - 1, insertSql.length - 1)))
+        insertSql = StringBuilder(insertSql.removeRange(IntRange(insertSql.length - 1, insertSql.length - 1)))
         insertSql.append(";")
 
         coreDao.sqlExecute(insertSql.toString())
@@ -169,38 +182,24 @@ class ExcelReader {
             }
         }
 
-        val sb = StringBuilder("[")
+        val dataSB = StringBuilder("[")
         for (index in (createInfoRowNum + 1)..sheet.lastRowNum) {
 
             val dataRow = sheet.getRow(index) ?: continue
-
             if (isEmptyRow(dataRow))
                 continue
 
-            sb.append("{")
-            for (cellIndex in 0..dataRow.lastCellNum) {
-                if (ExcelUtil.needReadData(sheet, cellIndex, createInfoRowNum)) {
-                    val row = dataRow.getCell(cellIndex)
-                    var data: String
-                    if (row != null) {
+            dataSB.append("{")
 
-                        data = ExcelUtil.getCellData(row)
-                        if (!StringUtil.isNumber(data))
-                            data = "'$data'"
-                    } else // 处理空字符串
-                        data = "''"
-
-                    sb.append("\"${fieldByMap[cellIndex]}\"").append(":").append(data).append(",")
-                }
-            }
-            sb.delete(sb.length - 1, sb.length)
-            sb.append("}")
+            readCellData(dataRow, sheet, dataSB, fieldByMap)
+            dataSB.delete(dataSB.length - 1, dataSB.length)
+            dataSB.append("}")
 
             if (index != sheet.lastRowNum)
-                sb.append(",")
+                dataSB.append(",")
         }
 
-        sb.append("]")
+        dataSB.append("]")
 
         val dic = File(exportPath)
         if (! dic.exists())
@@ -210,38 +209,40 @@ class ExcelReader {
         val file = File(fullPath)
         if (file.exists())
             file.delete()
-        file.writeText(sb.toString())
-//        logger.info(sb.toString())
+        file.writeText(dataSB.toString())
     }
 
     /**
-     * 处理文件,创表
+     * 处理文件
      */
-    fun dealFile(model: ReadModel) {
+    fun dealFile(fileName: String) {
 
-        // 目前只读取第一页
-        val sheetIndex = 1
-        val tName = model.name.toLowerCase()
-        val it = workbook!!.getSheetAt(0)
+        workbook?.let {
+            it.sheetIterator().forEach { sheet ->
 
-//        workbook!!.sheetIterator().forEach {
+                val sheetName = sheet.sheetName
+                // 未命名的sheet不读
 
-        logger.info("读取页签${sheetIndex}:${it.sheetName}")
-        logger.info("共有${it.lastRowNum + 1}行数据")
+                if (sheetName.indexOf("Sheet") < 0) {
 
-        val name = tablePrefix + tName
+                    logger.info("读取页签$${sheetName}")
+                    logger.info("共有${sheet.lastRowNum + 1}行数据")
 
-        //
-        if (exportType == 1) {
-            val fields = createTable(it, name)
-            // 读取写入数据
-            writeToMysql(it, name, fields)
-        } else {
-            writeToJsonFile(it, name)
+                    val saveName = tablePrefix + sheetName
+
+                    if (exportType == 1) {
+
+                        // 拼接出字段列
+                        val fields = createTable(sheet, saveName)
+
+                        writeToMysql(sheet, saveName, fields)
+                    } else {
+                        writeToJsonFile(sheet, saveName)
+                    }
+                }
+            }
         }
-//            logger.info(fields)
 
-//        }
     }
 
     fun readFile(_path: String) {
