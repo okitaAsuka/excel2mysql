@@ -126,9 +126,9 @@ class ExcelReader {
 
                     data = ExcelUtil.getCellData(row)
                     if (!StringUtil.isNumber(data))
-                        data = "'$data'"
+                        data = "\"$data\""
                 } else // 处理空字符串
-                    data = "''"
+                    data = "\"\""
 
                 if (exportType == 1) {
                     dataSB.append("$data,")
